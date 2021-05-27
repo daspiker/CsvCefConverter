@@ -7,16 +7,19 @@ import syslog
 import csv
 
 ##open csv file
-with open('./example.csv') as csvfile:
+with open('./testFile.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     #loop through each row of csv
+    outputFile = open('./CEFLogFile.txt', 'w')
+
     for row in readCSV:
 
+        #skip first row
+        if "DeviceVendor" not in row[0]:
         #Creating a value that will be used to write to the Syslog file. Rows added to applicable CEF fields.
-        syslog_message = "CEF:0|" + row[0] + "|" + row[1] + "|1.0|1000|ThreatIntelFeed|10|src=" + row[2]
-
-        #Writing the event to flat file
-        outputFile = open('./CEFLogFile.txt', 'w')
-        outputFile.write(syslog_message)
-
+            syslog_message = "CEF:0|" + row[0] + "|" + row[1] + "|" + row[29] + "|" + row[2] + "|" + row[30] + "|" + row[3] + "|msg=" + row[14]
+            #Writing the event to flat file
+            outputFile.write(syslog_message)
+            outputFile.write("\n")
+        
     outputFile.close()
