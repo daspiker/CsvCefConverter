@@ -1,2 +1,0 @@
-CEF:0|Cisco|ASA||111010||Medium|msg=%ASA-5-111010:  User admin , running appA from IP 10.0.0.12, executed cmd#015
-CEF:0|Cisco|ASA||111008||Medium|msg=%ASA-5-111008:  User admin executed no interface Loopback76
