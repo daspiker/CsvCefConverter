@@ -1,6 +1,6 @@
 # CsvCefConverter
 
-Usage: python CsvCefConverter.py <input template filename> <output cef filename>
+Usage: `python CsvCefConverter.py <input template filename> <output cef filename>`
 
 This script takes in a csv file and outputs a cef encoded log file.  
 The idea is that you take the template.csv and file out the fields that you want in your cef log.  you can have as many lines as you want.  
